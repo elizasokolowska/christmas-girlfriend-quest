@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102b24">
+  <meta name="description" content="Świąteczny quest wiedzy o narzeczonej — 8 pytań, jedna legendarna nagroda!">
+  <title>Girlfriend Knowledge Test • Christmas Edition</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="snow" aria-hidden="true"></div>
+  <main class="shell">
+    <header class="topbar" aria-label="Nagłówek gry">
+      <div class="brand"><span class="brand-icon" aria-hidden="true">✦</span><span>CHRISTMAS QUEST <small>2026</small></span></div>
+      <div class="top-tag">🎮 CO-OP MODE: ON</div>
+    </header>
+
+    <section class="game-card" aria-live="polite">
+      <div class="card-decoration" aria-hidden="true">❄ ✦ ❄</div>
+      <div id="start-screen" class="screen">
+        <div class="eyebrow">🎁 SECRET QUEST UNLOCKED 🎁</div>
+        <div class="big-icon" aria-hidden="true">🎄</div>
+        <h1>GIRLFRIEND<br><em>KNOWLEDGE TEST</em></h1>
+        <div class="edition">— CHRISTMAS EDITION —</div>
+        <div class="intro">
+          <p><strong>HO HO HO, PLAYER!</strong> 🎅</p>
+          <p>Wykryto nową misję poboczną!</p>
+          <p>Przez ostatnie lata zdobywałeś doświadczenie w trybie kooperacji ze swoją narzeczoną. Nadszedł czas, aby sprawdzić, czy faktycznie czytałeś wszystkie dialogi, czy po prostu klikałeś <strong>„DALEJ”</strong>. 👀</p>
+          <p>Przed Tobą <strong>QUIZ WIEDZY O TWOJEJ NARZECZONEJ</strong>.</p>
+          <ul>
+            <li>🎮 8 pytań, 3 odpowiedzi, tylko 1 poprawna.</li>
+            <li>❤️ Żadnych podpowiedzi od głównej bohaterki.</li>
+            <li>🏆 Zdobądź 7–8 punktów, by zasłużyć na tytuł <strong>LEGENDARY FIANCÉ</strong> i oficjalnie odblokować prezent!</li>
+          </ul>
+          <p class="warning">⚠️ Błędne odpowiedzi mogą skutkować wymownym spojrzeniem i tekstem „SERIO?!”.</p>
+        </div>
+        <div class="quest-objective"><span>MISSION OBJECTIVE</span><strong>UDOWODNIJ, ŻE ZASŁUGUJESZ NA TYTUŁ LEGENDARY FIANCÉ 👑</strong></div>
+        <button type="button" class="primary" id="start-btn">▶ ROZPOCZNIJ QUEST</button>
+        <p class="footnote">Powodzenia, Player One! ❤️</p>
+      </div>
+
+      <div id="question-screen" class="screen hidden">
+        <div class="question-top"><span class="level" id="question-count">LEVEL 1 / 8</span><span class="score-mini" id="score-mini">⭐ 0 XP</span></div>
+        <div class="progress-track" role="progressbar" id="progress" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0" aria-label="Postęp quizu"><div class="progress-fill" id="progress-fill"></div></div>
+        <div class="question-emoji" id="question-emoji" aria-hidden="true">🎯</div>
+        <div class="eyebrow">CHOOSE YOUR ANSWER</div>
+        <h2 id="question-title"></h2>
+        <div id="options" class="options" role="group" aria-label="Wybierz jedną odpowiedź"></div>
+        <button type="button" class="primary" id="next-btn" disabled>DALEJ →</button>
+        <p class="footnote">Jedna odpowiedź. Bez cofania. Bez telefonów do narzeczonej. 😏</p>
+      </div>
+
+      <div id="result-screen" class="screen hidden">
+        <div class="eyebrow">QUEST SUMMARY</div>
+        <div class="big-icon" id="result-icon" aria-hidden="true">👑</div>
+        <h2 class="result-heading" id="result-heading"></h2>
+        <div class="result-rank" id="result-rank"></div>
+        <div class="result-score"><span id="result-score">0/8</span><small>POPRAWNYCH ODPOWIEDZI</small></div>
+        <p class="result-message" id="result-message"></p>
+        <div class="reward-status" id="reward-status"></div>
+        <button type="button" class="primary" id="reward-btn">🎁 ODBIERZ NAGRODĘ</button>
+        <div id="reward-reveal" class="reward-reveal hidden" tabindex="-1">
+          <span class="reveal-icon">🎁✨</span>
+          <strong>ACHIEVEMENT UNLOCKED!</strong>
+          <p>Odbierz swój świąteczny prezent u swojej narzeczonej! ❤️</p>
+          <p class="small">Święty Mikołaj zatwierdził tę decyzję. Odwołania nie przysługują. 🎅</p>
+        </div>
+        <button type="button" class="text-button" id="answers-btn" aria-expanded="false">Zobacz poprawne odpowiedzi ▾</button>
+        <div id="answers-list" class="answer-review hidden"></div>
+        <button type="button" class="text-button" id="restart-btn">↻ ZAGRAJ PONOWNIE</button>
+      </div>
+    </section>
+
+    <footer class="footer">MADE WITH ❤️ · POWERED BY CHRISTMAS MAGIC ✨</footer>
+  </main>
+</body>
+</html>
